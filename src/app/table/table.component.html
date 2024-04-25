@@ -1,0 +1,17 @@
+<h2>tabellen funkar</h2>
+
+<table>
+    <tr>
+        <th>Kurskod</th>
+        <th>Kursnamn</th>
+        <th>Progression</th>
+        <th>URL</th>
+    </tr>
+    <tr *ngFor="let course of courselist">
+        <td>{{course.code}}</td>
+        <td>{{course.coursename}}</td>
+        <td>{{course.progression}}</td>
+        <td>{{course.syllabus}}</td>
+    </tr>
+ 
+</table>
