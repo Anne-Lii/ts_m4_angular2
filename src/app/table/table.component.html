@@ -1,17 +1,19 @@
-<h2>tabellen funkar</h2>
 
+<form>
+    <label for="search">Sök: </label>
+    <input type="text" id="search">
+</form>
 <table>
     <tr>
-        <th>Kurskod</th>
-        <th>Kursnamn</th>
-        <th>Progression</th>
-        <th>URL</th>
+      <th (click)="sort('code')">Kurskod</th>
+      <th (click)="sort('coursename')">Kursnamn</th>
+      <th (click)="sort('progression')">Progression</th>
+      <th>URL</th>
     </tr>
     <tr *ngFor="let course of courselist">
-        <td>{{course.code}}</td>
-        <td>{{course.coursename}}</td>
-        <td>{{course.progression}}</td>
-        <td>{{course.syllabus}}</td>
-    </tr>
- 
-</table>
+      <td>{{course.code}}</td>
+      <td>{{course.coursename}}</td>
+      <td>{{course.progression}}</td>
+      <td><a href="{{course.syllabus}}" target="_blank">Kursplan</a></td>
+    </tr> 
+  </table>

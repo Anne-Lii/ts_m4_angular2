@@ -3,4 +3,5 @@ export interface CourseInterface {
     coursename:string,
     progression:string,
     syllabus:string
+    [key: string]: any; 
 }
