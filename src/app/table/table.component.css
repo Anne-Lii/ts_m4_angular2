@@ -12,31 +12,34 @@ form {
     width: 100%;
     max-width: 800px;
     margin: 20px auto;
-    
 }
 
 label {
     font-size: 1.2em;
 }
 
-input {
-    width: 90%;
-    max-width: 800px;
+input[type="text"] {
+    width: 200px;
     height: 30px;
     margin: auto;
+    transition: width 0.3s;
+}
+
+input[type="text"]:focus {
+    width: 90%;
 }
 
 table {
     width: 90%;
     max-width: 800px;
     margin: auto;
-
 }
 
 th {
-    font-size: 1.2em;
+    font-size: 1em;
     padding-bottom: 10px;
-} 
+    text-align: left;
+}
 
 th:hover {
     cursor: pointer;
@@ -45,4 +48,48 @@ th:hover {
 
 td {
     font-size: 1em;
+}
+
+@media screen and (max-width: 500px) {
+    #container {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0;
+        background-color: antiquewhite;
+        opacity: 70%;
+
+    }
+
+    form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    input[type="text"] {
+        width: 80%;
+        height: 30px;
+        margin: 15px auto; 
+             
+    }
+
+    input[type="text"]:focus {
+        width: 80%;
+    }
+    
+    table {
+        width: 95%;
+        margin: auto;
+        padding-bottom: 30px;
+     
+    }
+    
+    th {
+        font-size: 0.8em;
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    td {
+        font-size: 0.8em;
+    }
 }
