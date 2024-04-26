@@ -1,6 +1,18 @@
+#container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+    padding: 50px 20px;
+    border-radius: 5px;
+    opacity: 70%;
+}
+
 form {
-    width: 90%;
+    width: 100%;
+    max-width: 800px;
     margin: 20px auto;
+    
 }
 
 label {
@@ -8,9 +20,17 @@ label {
 }
 
 input {
-    width: 80%;
+    width: 90%;
     max-width: 800px;
     height: 30px;
+    margin: auto;
+}
+
+table {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+
 }
 
 th {

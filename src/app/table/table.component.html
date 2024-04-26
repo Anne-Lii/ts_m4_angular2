@@ -1,19 +1,21 @@
-
-<form>
-    <label for="search">Sök: </label>
-    <input type="text" id="search">
-</form>
-<table>
-    <tr>
-      <th (click)="sort('code')">Kurskod</th>
-      <th (click)="sort('coursename')">Kursnamn</th>
-      <th (click)="sort('progression')">Progression</th>
-      <th>URL</th>
-    </tr>
-    <tr *ngFor="let course of courselist">
-      <td>{{course.code}}</td>
-      <td>{{course.coursename}}</td>
-      <td>{{course.progression}}</td>
-      <td><a href="{{course.syllabus}}" target="_blank">Kursplan</a></td>
-    </tr> 
-  </table>
+<div id="container">
+    <form>
+        <label for="search">Sök: </label>
+        <input type="text" id="search" name="search" [(ngModel)]="searchTerm" (input) ="filterCourses()">
+    </form>
+    <table>
+        <tr>
+            <th (click)="sort('code')">Kurskod</th>
+            <th (click)="sort('coursename')">Kursnamn</th>
+            <th (click)="sort('progression')">Progression</th>
+            <th>URL</th>
+        </tr>
+        <tr *ngFor="let course of filterCourses()">
+            <td>{{ course.code }}</td>
+            <td>{{ course.coursename }}</td>
+            <td>{{ course.progression }}</td>
+            <td><a href="{{course.syllabus}}" target="_blank">Kursplan</a></td>
+        </tr> 
+        
+    </table>
+</div>

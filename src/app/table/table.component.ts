@@ -2,12 +2,13 @@ import { Component} from '@angular/core';
 import { CourseInterface } from '../models/course-interface';
 import { AjaxService } from '../services/ajax.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })
@@ -16,6 +17,7 @@ export class TableComponent {
   courselist: CourseInterface[] = [];
   sortBy: string = '';
   reverse: boolean = false;
+  searchTerm: string = '';
  
 
   constructor(private ajaxservice: AjaxService) { }
@@ -30,6 +32,7 @@ export class TableComponent {
       })
     })
   }
+
   sort(key: string) {
     this.sortBy = key;
     this.reverse = !this.reverse;
@@ -39,6 +42,14 @@ export class TableComponent {
       return this.reverse ? y.localeCompare(x) : x.localeCompare(y);
     });
   }
+
+
+filterCourses(): CourseInterface[] {
+  return this.courselist.filter(course =>
+    course.code.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+    course.coursename.toLowerCase().includes(this.searchTerm.toLowerCase())
+  );
+}
 
 }
 
